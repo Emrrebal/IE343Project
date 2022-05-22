@@ -22,8 +22,40 @@ public class App {
         ArrayList<Point> unassignedPoints = new ArrayList<>();
         ArrayList<ArrayList<Point>> assignmentList = new ArrayList<>();
         
+        double[][] sumofdistance = new double[facs.length][1]; ;
+        int pmedianindex = 0;
+        double min = Integer.MAX_VALUE;
+        
+        
+     	for (int i=0;i<distanceMatrix.length;i++){
+        	for (int j=0;j<distanceMatrix[0].length;j++){
+        		
+        		sumofdistance[i][0] = sumofdistance[i][0] + distanceMatrix[i][j];
+        		if(sumofdistance[i][0]< min){
+         			min =sumofdistance[i][0];
+         			pmedianindex = i;
+         			}
+        		}
+        	}
+     	openedFacilities.add(facs[pmedianindex]);
+     	operator.print2d(distanceMatrix);
+//     	while(openedFacilities.size()<facs.length) {
+//     	
+//     	
+//     	
+//     	}
+     	
+        
+            System.out.print("stop");
+        }
+        
+        
+        
+        
+        
+        
     }
-}
+
 
 
 
